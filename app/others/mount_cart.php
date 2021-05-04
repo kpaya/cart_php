@@ -1,9 +1,10 @@
 
-<!-- TRECHO DE CÓDIGO ABAIXO FARÁ A CONULSTA NA SESSION STORAGE E PREENCHERÁ O CARRINHO -->
+<!-- TRECHO DE CÓDIGO ABAIXO FARÁ A CONSULTA NA SESSION STORAGE E PREENCHERÁ O CARRINHO -->
 
 <?php
 
 $totalValue = 0;
+$totalContent = '';
 $cartContent = '';
 if (isset($_SESSION['itens-cart'])) {
     foreach ($_SESSION['itens-cart'] as $key => $value) {
@@ -12,7 +13,7 @@ if (isset($_SESSION['itens-cart'])) {
 
         $cartContent .=  '<div class="row">
                         <div class="col-3 align-self-center text-center">
-                            <img src=' . $value['img'] . ' alt=".." width="100" height="100">
+                            <img src=' . $value['img'] . ' alt=".." width="100" height="140">
                         </div>
                         <div class="col-5 align-self-center">
                             <span class="fs-5 text-wrap">' . $value['title'] . '<br></span>
@@ -24,9 +25,11 @@ if (isset($_SESSION['itens-cart'])) {
                         <hr class="dropdown-divider">
                     </div>';
     }
-    $cartContent .=    '<div class="row">
+
+    $totalContent .=    '<div class="row py-1">
                         <span class="text-primary fw-bold fs-5">Total: R$ ' . number_format($totalValue, 2) . '</span>
                     </div>';
+    
 } else {
     $cartContent = '
         <div class="col-sm align-self-center"><span class="m-0 fw-bold">Seu carrinho está vazio!</span></div>
