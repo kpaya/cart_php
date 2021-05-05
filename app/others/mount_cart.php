@@ -11,7 +11,7 @@ if (isset($_SESSION['itens-cart'])) {
 
         $totalValue += ($value['price'] * $value['unit']);
 
-        $cartContent .=  '<a href="removeitem.php?id=' . $key . '" class="itemCart" style="text-decoration: none; color: inherit;">
+        $cartContent .=  '
                             <div class="row">
                                 <div class="col-3 align-self-center text-center">
                                     <img src=' . $value['img'] . ' alt=".." width="100" height="140">
@@ -22,10 +22,13 @@ if (isset($_SESSION['itens-cart'])) {
                                 </div>
                                 <div class="col-4 align-self-center text-center">
                                     <span class="fs-5 p-0 text-nowrap">R$ ' . number_format(($value['price'] * $value['unit']), 2) . '</span><br>
+                                    <a href="removeitem.php?id=' . $key . '" style="text-decoration: none; color: inherit;">
+                                        <button type="button" class="btn btn-outline-danger fw-bold">- 1 UNI</button>
+                                    </a>
                                 </div>
                                 <hr class="dropdown-divider">
-                            </div>
-                        </a>';
+                            </div>';
+                        
     }
 
     $totalContent .=    '<div class="row justify-content-between py-2">
