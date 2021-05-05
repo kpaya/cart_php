@@ -26,6 +26,13 @@ if (isset($_SESSION['itens-cart'])) {
                                         <button type="button" class="btn btn-outline-danger fw-bold">- 1 UNI</button>
                                     </a>
                                 </div>
+                                <div class="row mt-1 text-center">
+                                    <a href="removeitens.php?id=' . $key . '" style="text-decoration: none; color: inherit;">
+                                        <div class="d-grid gap-2 p-0 m-0">
+                                            <button type="button" class="btn btn-outline-danger fw-bold my-2">Remover Produto</button>
+                                        </div>
+                                    </a>
+                                </div>
                                 <hr class="dropdown-divider">
                             </div>';
                         
