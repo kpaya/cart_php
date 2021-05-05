@@ -12,10 +12,21 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <!-- <script>
+  <!-- Script para executar o SweetAlert via PHP (URL) -->
+  <script>
     $(document).ready(function(e) {
+      <?php
+      if ($icon !== NULL && $title !== NULL) {
+        echo 'Swal.fire({
+          position: "top-start",
+          icon: "' . $icon . '",
+          title: "' . $title . '",
+          showConfirmButton: false,
+          timer: 3500
+        });';
+      } ?>
     });
-  </script> -->
+  </script>
   <title>Shopping Cart - Precode</title>
 </head>
 

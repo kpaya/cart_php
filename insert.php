@@ -12,9 +12,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         } else {
             $_SESSION['itens-cart'][$productId] = array('id' => $productId, 'title' => $myItens[$productId]['title'], 'unit' => 1, 'price' => $myItens[$productId]['price'], 'img' => $myItens[$productId]['img']);
         }
-        header("location: index.php?status=true");
+        header("location: index.php?status=true&method=insert");
     } else {
-        header("location: index.php?status=false");
+        header("location: index.php?status=false&method=insert");
     }
 } else {
     header('location: index.php?status=false');
